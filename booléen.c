@@ -1,7 +1,7 @@
 #include "monty.h"
-bool bool_is_empty_stack(stack_t *Stack)
+bool bool_is_empty_stack(stack_t **stack)
 {
-    if (Stack == NULL)
+    if (*stack == NULL)
     {
         return(true);
     }

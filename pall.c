@@ -3,11 +3,11 @@ void pall(stack_t **stack, unsigned int y)
 {
 	stack_t *copy = *stack;
 	(void)y;
-	if (bool_is_empty_stack(*stack))
+	if (stack == NULL)
 	{
 		return;
 	}
-	while (!bool_is_empty_stack(*stack))
+	while (stack != NULL)
 	{
 		printf("%d\n", copy->n);
 		copy = copy->next;

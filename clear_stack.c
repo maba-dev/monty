@@ -6,14 +6,17 @@
  * 
  */
 
-stack_t clear_stack(stack_t *stack)
+void clear_stack(stack_t *stack)
 {
     stack_t *element;
-    if(is_stack_empty(stack))
+    if(stack == NULL)
     {
         return;
     }
+    while (stack != NULL)
+    {
+    element = stack;
     element = stack->next;
-    free(stack);
-    return clear_stack(element);
+    free(element);
+    }
 }

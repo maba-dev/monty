@@ -1,7 +1,13 @@
 #include "monty.h"
-int main(void)
+global_variables_t var_global;
+int main(int argc, char **argv)
 {
-	(*monty(char *k))(stack_t **stack, unsigned int line_number);
-	_push(stack_t **stack,unsigned int x);
+	if (argc != 2)
+	{
+		printf("USAGE: monty file"); 
+		EXIT_FAILURE;
+	}
+	fopen(argv[1], "r");
+	clear_stack(stack);
 	return(0);
 }

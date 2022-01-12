@@ -29,7 +29,6 @@
 #include <wctype.h>
 
 
-
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -61,15 +60,22 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+typedef struct global_variables_s
+{
+    char *number;
+    FILE *fd;
+    char *buffer;
+} global_variables_t;
 
 #define true 1
 #define false 0
 
 void _push(stack_t **stack,unsigned int x);
-bool bool_is_empty_stack(stack_t *Stack);
+bool bool_is_empty_stack(stack_t **stack);
 void (*monty(char *k))(stack_t **stack, unsigned int line_number);
 void new_stack(void);
-stack_t clear_stack(stack_t *stack);
+void clear_stack(stack_t *stack);
+void pall(stack_t **stack, unsigned int y);
 
 
 #endif /* Stacks_Queues_LIFO_FIFO */
