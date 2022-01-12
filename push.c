@@ -1,12 +1,18 @@
 #include "monty.h"
-void _push(stack_t **stack,unsigned int x)
+/**
+ *_push - prototype
+ *@stack:V
+ *@x:V
+ */
+void _push(stack_t **stack, unsigned int x)
 {
-    stack_t *element;
-    element = malloc(sizeof(*element));
-    if (element == NULL)
-    {
-        exit (EXIT_FAILURE);
-    }
-    element->n = x;
-    element->next = *stack;
+	stack_t *element;
+
+	element = malloc(sizeof(*element));
+	if (element == NULL)
+	{
+		exit(EXIT_FAILURE);
+	}
+	element->n = x;
+	element->next = *stack;
 }
