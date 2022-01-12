@@ -1,5 +1,5 @@
 #include "monty.h"
-stack_t _push(stack_t *Stack, int x)
+void _push(stack_t **stack,unsigned int x)
 {
     stack_t *element;
     element = malloc(sizeof(*element));
@@ -8,6 +8,5 @@ stack_t _push(stack_t *Stack, int x)
         exit (EXIT_FAILURE);
     }
     element->n = x;
-    element->next = Stack;
-    return *element;
+    element->next = *stack;
 }
