@@ -68,6 +68,8 @@ typedef struct instruction_s
 void _push(stack_t **stack,unsigned int x);
 bool bool_is_empty_stack(stack_t *Stack);
 void (*monty(char *k))(stack_t **stack, unsigned int line_number);
+void new_stack(void);
+stack_t clear_stack(stack_t *stack);
 
 
 #endif /* Stacks_Queues_LIFO_FIFO */
