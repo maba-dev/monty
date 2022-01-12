@@ -9,8 +9,9 @@ void (*monty(char *k))(stack_t **stack, unsigned int line_number)
 	int i = 0;
 	int j;
 	instruction_t arr[] = {
-		{"pall", pall},
+		
 		{"push", _push},
+		{"pall", pall},
 	};
 
 	while (arr[i].opcode)
