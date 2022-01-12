@@ -1,38 +1,11 @@
 #ifndef Stacks_Queues_LIFO_FIFO
 #define Stacks_Queues_LIFO_FIFO
 
-#include <stdio.h>
-#include <stdbool.h>
-#include <stdlib.h>
-#include <assert.h>
-#include <complex.h>
-#include <ctype.h>
-#include <errno.h>
-#include <fenv.h>
-#include <float.h>
-#include <inttypes.h>
-#include <iso646.h>
-#include <limits.h>
-#include <locale.h>
-#include <math.h>
-#include <setjmp.h>
-#include <signal.h>
-#include <stdarg.h>
-#include <stddef.h>
-#include <stdint.h>
-#include <stdlib.h>
-#include <string.h>
-#include <tgmath.h>
-#include <threads.h>
-#include <time.h>
-#include <wchar.h>
-#include <wctype.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <sys/stat.h>
-#include <fcntl.h>
+#define _GNU_SOURCE
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -67,7 +40,7 @@ typedef struct instruction_s
 
 
 void _push(stack_t **stack,unsigned int x);
-void (*monty(char *k))(stack_t **stack, unsigned int line_number);
+int (*monty(char *k))(stack_t **stack, unsigned int line_number);
 void clear_stack(stack_t *stack);
 void pall(stack_t **stack, unsigned int y);
 

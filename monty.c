@@ -4,7 +4,7 @@
  *@k:V
  *Return: 0
  */
-void (*monty(char *k))(stack_t **stack, unsigned int line_number)
+int (*monty(char *k))(stack_t **stack, unsigned int line_number)
 {
 	int i = 0;
 	int j;
