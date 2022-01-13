@@ -43,6 +43,8 @@ void _push(stack_t **stack,unsigned int x);
 int (*monty(char *k))(stack_t **stack, unsigned int line_number);
 void clear_stack(stack_t *stack);
 void pall(stack_t **stack, unsigned int y);
+int getword(char *line, int line_number, char **command);
+void pint(stack_t **stack, unsigned int line_number);
 
 
 #endif /* Stacks_Queues_LIFO_FIFO */
