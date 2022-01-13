@@ -1,6 +1,8 @@
 #ifndef Stacks_Queues_LIFO_FIFO
 #define Stacks_Queues_LIFO_FIFO
 
+#define MAX_buffer_size 1024
+
 #define _GNU_SOURCE
 
 #include <stdio.h>
@@ -38,12 +40,14 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+char **array_command;
+char **strtow(char *str);
 
 void _push(stack_t **stack,unsigned int x);
-int (*monty(char *k))(stack_t **stack, unsigned int line_number);
+void (*monty(char *k))(stack_t **stack, unsigned int line_number);
 void clear_stack(stack_t *stack);
 void pall(stack_t **stack, unsigned int y);
-int getword(char *line, int line_number, char **command);
+int getword();
 void pint(stack_t **stack, unsigned int line_number);
 
 
