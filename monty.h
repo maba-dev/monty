@@ -37,18 +37,18 @@ stack_t *stack;
 typedef struct instruction_s
 {
         char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+        void (*f)(stack_t **stack);
 } instruction_t;
 
 char **array_command;
 char **strtow(char *str);
 
-void _push(stack_t **stack,unsigned int x);
-void (*monty(char *k))(stack_t **stack, unsigned int line_number);
+void _push(stack_t **stack, char *npush, unsigned int line_number);
+void (*monty(char **k, unsigned int line_number))(stack_t **stack);
 void clear_stack(stack_t *stack);
-void pall(stack_t **stack, unsigned int y);
-int getword();
-void pint(stack_t **stack, unsigned int line_number);
+void pall(stack_t **stack);
+void pint(stack_t **stack);
+char (*getword(char *line));
 
 
 #endif /* Stacks_Queues_LIFO_FIFO */

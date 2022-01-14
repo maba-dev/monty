@@ -4,7 +4,7 @@
  *@stack:V
  *@x:V
  */
-void _push(stack_t **stack, unsigned int x)
+void _push(stack_t **stack, char *npush, unsigned int line_number)
 {
 	stack_t *element;
 

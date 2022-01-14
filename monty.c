@@ -4,23 +4,23 @@
  *@k:V
  *Return: 0
  */
-void (*monty(char *k))(stack_t **stack, unsigned int line_number)
+void (*monty(char **k, unsigned int line_number))(stack_t **stack)
 {
 	int i = 0;
 	int j;
 	instruction_t arr[] = {
 
-		{"push", _push},
 		{"pall", pall},
 		{NULL, NULL},
 	};
 
 	while (arr[i].opcode)
 	{
-		j = strcmp(arr[i].opcode, k);
-		if (j == arr[i].opcode[0])
+		j = strcmp(arr[i].opcode, k[0]);
+		if (j == 0)
 			return (arr[i].f);
 		i++;
 	}
-	return (0);
+	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, k[0]);
+	exit(EXIT_FAILURE);
 }

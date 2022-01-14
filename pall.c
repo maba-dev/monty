@@ -4,10 +4,10 @@
  *@stack: V
  *@y: V
  */
-void pall(stack_t **stack, unsigned int y)
+void pall(stack_t **stack)
 {
 	stack_t *copy = *stack;
-	(void)y;
+
 	if (stack == NULL)
 	{
 		return;

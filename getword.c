@@ -1,21 +1,17 @@
 #include "monty.h"
-int getword()
+char (*getword(char *line))
 {
-	if (*command)
+	int i;
+	for (i = 0; line[i];  i++)
+	{
+		if (line[i] == '\t')
 		{
-				if (strcmp(*command, "push") == 0)
-				{
-					free(*command);
-					number = monty(line, i);
-					if (number == -123456)
-                    {
-                        return (-1);
-                    }
-					stack = _push(&stack, line_number, number);
-					return (0);
-				}
-				else
-					return (monty(*command, line_number)(&stack));
+			line[i] = ' ';
 		}
+		if (line[i] == '#' || line[i] == '\n')
+		{
+			line[i] = '\0';
+		}
+	}
+	return line;
 }
-
