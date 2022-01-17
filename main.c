@@ -13,7 +13,7 @@ int main(int argc, char **argv)
 	int size = 1024;
 	char **line_tok;
 	unsigned int line_number = 0;
-	stack_t *stack;
+	stack_t *stack = NULL;
 
 	if (argc != 2)
 	{
@@ -33,7 +33,8 @@ int main(int argc, char **argv)
 		line_tok = strtow(line_clean);
 		if (strcmp(line_tok[0], "push") == 0)
 		{
-			_push(&stack, line_tok[1], line_number);
+			stack = _push(&stack, line_tok[1], line_number);
+			printf("stack(n)");
 		}
 		else
 			monty(line_tok, line_number);

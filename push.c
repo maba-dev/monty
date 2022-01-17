@@ -4,15 +4,28 @@
  *@stack:V
  *@x:V
  */
-void _push(stack_t **stack, char *npush, unsigned int line_number)
+ stack_t *_push(stack_t **stack, char *npush, unsigned int line_number)
 {
-	stack_t *element;
+	int x;
+	int i = 0;
 
-	element = malloc(sizeof(*element));
-	if (element == NULL)
+	if (!npush)
 	{
-		exit(EXIT_FAILURE);
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+			exit(EXIT_FAILURE);
 	}
-	element->n = x;
-	element->next = *stack;
+
+	while (npush[i])
+	{
+		printf("ici\n");
+		if(npush[i] < '0' || npush[i] > '9')
+		{
+			fprintf(stderr, "L%d: usage: push integer\n", line_number);
+			exit(EXIT_FAILURE);
+		}
+		i++;
+	}
+	x = atoi(npush);
+	*stack = add_dnodeint(stack, x);
+	return (*stack);
 }

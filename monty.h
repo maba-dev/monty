@@ -1,14 +1,9 @@
 #ifndef Stacks_Queues_LIFO_FIFO
 #define Stacks_Queues_LIFO_FIFO
 
-#define MAX_buffer_size 1024
-
-#define _GNU_SOURCE
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -43,12 +38,12 @@ typedef struct instruction_s
 char **array_command;
 char **strtow(char *str);
 
-void _push(stack_t **stack, char *npush, unsigned int line_number);
+stack_t *_push(stack_t **stack, char *npush, unsigned int line_number);
 void (*monty(char **k, unsigned int line_number))(stack_t **stack);
 void clear_stack(stack_t *stack);
 void pall(stack_t **stack);
-void pint(stack_t **stack);
+void pint(stack_t **stack, unsigned int line_number);
 char (*getword(char *line));
-
+stack_t	*add_dnodeint(stack_t **head, const int n);
 
 #endif /* Stacks_Queues_LIFO_FIFO */

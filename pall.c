@@ -8,11 +8,11 @@ void pall(stack_t **stack)
 {
 	stack_t *copy = *stack;
 
-	if (stack == NULL)
+	if (*stack == NULL)
 	{
 		return;
 	}
-	while (stack != NULL)
+	while (copy != NULL)
 	{
 		printf("%d\n", copy->n);
 		copy = copy->next;
